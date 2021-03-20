@@ -1,10 +1,7 @@
 package cz.vlastni.eshop;
 
-import cz.vlastni.eshop.Entity.NakoupenaPolozka;
-import cz.vlastni.eshop.Entity.Platba;
-import cz.vlastni.eshop.Entity.Uzivatel;
+import cz.vlastni.eshop.entity.NakoupenaPolozka;
 import cz.vlastni.eshop.repository.NakoupenaPolozkaRepository;
-import cz.vlastni.eshop.repository.UzivatelRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

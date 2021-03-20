@@ -1,9 +1,7 @@
 package cz.vlastni.eshop;
 
-import cz.vlastni.eshop.Entity.Doprava;
-import cz.vlastni.eshop.Entity.Uzivatel;
+import cz.vlastni.eshop.entity.Doprava;
 import cz.vlastni.eshop.repository.DopravaRepository;
-import cz.vlastni.eshop.repository.UzivatelRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

@@ -1,17 +1,17 @@
-package cz.vlastni.eshop.Entity;
+package cz.vlastni.eshop.entity;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Platba {
+public class NakoupenaPolozka {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 45)
-    private String popis;
     @Column(nullable = false)
-    private Double prevod;
+    private Integer mnozstvi;
+    @Column(nullable = false)
+    private Boolean platnost;
 
     @OneToMany(mappedBy = "id")
     private Set<Nakup> nakup;
@@ -25,20 +25,20 @@ public class Platba {
         return id;
     }
 
-    public String getPopis() {
-        return popis;
+    public Integer getMnozstvi() {
+        return mnozstvi;
     }
 
-    public void setPopis(String popis) {
-        this.popis = popis;
+    public void setMnozstvi(Integer mnozstvi) {
+        this.mnozstvi = mnozstvi;
     }
 
-    public Double getPrevod() {
-        return prevod;
+    public Boolean getPlatnost() {
+        return platnost;
     }
 
-    public void setPrevod(Double prevod) {
-        this.prevod = prevod;
+    public void setPlatnost(Boolean platnost) {
+        this.platnost = platnost;
     }
 
     public Set<Nakup> getNakup() {

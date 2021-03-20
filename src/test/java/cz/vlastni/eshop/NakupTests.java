@@ -1,6 +1,6 @@
 package cz.vlastni.eshop;
 
-import cz.vlastni.eshop.Entity.*;
+import cz.vlastni.eshop.entity.*;
 import cz.vlastni.eshop.repository.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

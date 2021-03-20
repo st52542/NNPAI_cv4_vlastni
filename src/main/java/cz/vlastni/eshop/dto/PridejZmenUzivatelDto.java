@@ -1,38 +1,14 @@
-package cz.vlastni.eshop.Entity;
+package cz.vlastni.eshop.dto;
 
-import javax.persistence.*;
-import java.util.Set;
 
-@Entity
-public class Uzivatel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PridejZmenUzivatelDto {
     private Long id;
-    @Column(length = 45,nullable = false)
     private String jmeno;
-    @Column(length = 45,nullable = false)
     private String prijmeni;
-    @Column(length = 100,nullable = false,unique = true)
     private String email;
-    @Column(length = 100,nullable = false)
     private String heslo;
-    @Column(length = 100,nullable = false)
     private String adresa;
-    @Column(nullable = false)
     private Boolean admin;
-
-    @OneToMany(mappedBy = "id")
-    private Set<Nakup> nakup;
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
 
     public String getJmeno() {
         return jmeno;
@@ -82,11 +58,11 @@ public class Uzivatel {
         this.admin = admin;
     }
 
-    public Set<Nakup> getNakup() {
-        return nakup;
+    public Long getId() {
+        return id;
     }
 
-    public void setNakup(Set<Nakup> nakup) {
-        this.nakup = nakup;
+    public void setId(Long id) {
+        this.id = id;
     }
 }

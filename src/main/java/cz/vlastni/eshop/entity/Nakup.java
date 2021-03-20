@@ -1,8 +1,7 @@
-package cz.vlastni.eshop.Entity;
+package cz.vlastni.eshop.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 public class Nakup {

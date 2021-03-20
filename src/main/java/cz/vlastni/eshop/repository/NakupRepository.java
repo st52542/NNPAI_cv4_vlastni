@@ -1,6 +1,6 @@
 package cz.vlastni.eshop.repository;
 
-import cz.vlastni.eshop.Entity.Nakup;
+import cz.vlastni.eshop.entity.Nakup;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
