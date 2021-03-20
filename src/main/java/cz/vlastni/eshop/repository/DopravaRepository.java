@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface DopravaRepository extends JpaRepository<Doprava,Long> {
+
     Optional<Doprava> findById(Long id);
 
     Doprava findByCena(Integer cena);

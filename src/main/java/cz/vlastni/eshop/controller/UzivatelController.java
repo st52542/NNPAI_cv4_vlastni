@@ -6,6 +6,7 @@ import cz.vlastni.eshop.repository.UzivatelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +17,23 @@ public class UzivatelController {
     @Autowired
     UzivatelRepository uzivatelRepository;
 
-    @GetMapping("/")
-    public String zobrazVsechnyUzivatele(Model model){
-        model.addAttribute("uzivatelList",uzivatelRepository.findAll());
+    @ExceptionHandler(RuntimeException.class)
+    public String ochranaChyb() {
+        return "chyba";
+    }
+
+    @GetMapping("/uzivatel-detail/{id}")
+    public String zobrazDetailyUzivatele(@PathVariable(required = false) Long id, Model model) {
+        model.addAttribute("uzivatel", uzivatelRepository.findById(id).get());
+        return "uzivatel-detail";
+    }
+
+    @GetMapping("/uzivatel-list")
+    public String zobrazVsechnyUzivatele(Model model) {
+        model.addAttribute("uzivatelList", uzivatelRepository.findAll());
         return "uzivatel-list";
     }
+
     @GetMapping(value = {"/uzivatel-reg-form", "/uzivatel-reg-form/{id}"})
     public String zobrazUzivatele(@PathVariable(required = false) Long id, Model model) {
         if (id != null) {
@@ -39,6 +52,7 @@ public class UzivatelController {
         }
         return "uzivatel-reg-form";
     }
+
     @PostMapping("/uloz-uzivatele")
     public String zpracujUzivatele(PridejZmenUzivatelDto pridejZmenUzivatelDto) {
         Uzivatel uziv = new Uzivatel();

@@ -54,7 +54,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+        //buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -86,7 +86,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+       // buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -95,7 +95,7 @@ class NakupTests {
         buy2.setStav(true);
         buy2.setObjednavka(25);
         buy2.setDoprava(deliver);
-        buy2.setNakoupenaPolozka(nakoupenaPolozka);
+       // buy2.setNakoupenaPolozka(nakoupenaPolozka);
         buy2.setPlatba(pay);
         buy2.setUzivatel(user);
         nakupRepository.save(buy2);
@@ -104,7 +104,7 @@ class NakupTests {
         buy3.setStav(true);
         buy3.setObjednavka(3);
         buy3.setDoprava(deliver);
-        buy3.setNakoupenaPolozka(nakoupenaPolozka);
+      //  buy3.setNakoupenaPolozka(nakoupenaPolozka);
         buy3.setPlatba(pay);
         buy3.setUzivatel(user);
         nakupRepository.save(buy3);
@@ -136,7 +136,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+    //    buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -145,7 +145,7 @@ class NakupTests {
         buy2.setStav(true);
         buy2.setObjednavka(25);
         buy2.setDoprava(deliver);
-        buy2.setNakoupenaPolozka(nakoupenaPolozka);
+      //  buy2.setNakoupenaPolozka(nakoupenaPolozka);
         buy2.setPlatba(pay);
         buy2.setUzivatel(user);
         nakupRepository.save(buy2);
@@ -154,7 +154,7 @@ class NakupTests {
         buy3.setStav(true);
         buy3.setObjednavka(3);
         buy3.setDoprava(deliver);
-        buy3.setNakoupenaPolozka(nakoupenaPolozka);
+      //  buy3.setNakoupenaPolozka(nakoupenaPolozka);
         buy3.setPlatba(pay);
         buy3.setUzivatel(user);
         nakupRepository.save(buy3);
@@ -186,7 +186,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+      //  buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -195,7 +195,7 @@ class NakupTests {
         buy2.setStav(true);
         buy2.setObjednavka(25);
         buy2.setDoprava(deliver);
-        buy2.setNakoupenaPolozka(nakoupenaPolozka);
+       // buy2.setNakoupenaPolozka(nakoupenaPolozka);
         buy2.setPlatba(pay);
         buy2.setUzivatel(user);
         nakupRepository.save(buy2);
@@ -204,7 +204,7 @@ class NakupTests {
         buy3.setStav(true);
         buy3.setObjednavka(3);
         buy3.setDoprava(deliver);
-        buy3.setNakoupenaPolozka(nakoupenaPolozka);
+       // buy3.setNakoupenaPolozka(nakoupenaPolozka);
         buy3.setPlatba(pay);
         buy3.setUzivatel(user);
         nakupRepository.save(buy3);
@@ -238,7 +238,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+     //   buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -247,7 +247,7 @@ class NakupTests {
         buy2.setStav(true);
         buy2.setObjednavka(25);
         buy2.setDoprava(deliver);
-        buy2.setNakoupenaPolozka(nakoupenaPolozka);
+     //   buy2.setNakoupenaPolozka(nakoupenaPolozka);
         buy2.setPlatba(pay);
         buy2.setUzivatel(user);
         nakupRepository.save(buy2);
@@ -256,7 +256,7 @@ class NakupTests {
         buy3.setStav(true);
         buy3.setObjednavka(3);
         buy3.setDoprava(deliver);
-        buy3.setNakoupenaPolozka(nakoupenaPolozka);
+     //   buy3.setNakoupenaPolozka(nakoupenaPolozka);
         buy3.setPlatba(pay);
         buy3.setUzivatel(user);
         nakupRepository.save(buy3);
@@ -288,7 +288,7 @@ class NakupTests {
         buy.setStav(true);
         buy.setObjednavka(50);
         buy.setDoprava(deliver);
-        buy.setNakoupenaPolozka(nakoupenaPolozka);
+     //   buy.setNakoupenaPolozka(nakoupenaPolozka);
         buy.setPlatba(pay);
         buy.setUzivatel(user);
         nakupRepository.save(buy);
@@ -297,7 +297,7 @@ class NakupTests {
         buy2.setStav(true);
         buy2.setObjednavka(25);
         buy2.setDoprava(deliver);
-        buy2.setNakoupenaPolozka(nakoupenaPolozka);
+      //  buy2.setNakoupenaPolozka(nakoupenaPolozka);
         buy2.setPlatba(pay);
         buy2.setUzivatel(user);
         nakupRepository.save(buy2);
@@ -306,7 +306,7 @@ class NakupTests {
         buy3.setStav(true);
         buy3.setObjednavka(3);
         buy3.setDoprava(deliver);
-        buy3.setNakoupenaPolozka(nakoupenaPolozka);
+       // buy3.setNakoupenaPolozka(nakoupenaPolozka);
         buy3.setPlatba(pay);
         buy3.setUzivatel(user);
         nakupRepository.save(buy3);

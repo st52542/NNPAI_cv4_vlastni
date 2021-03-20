@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head"></head>
+<body>
+<h2>Detail platby</h2>
+<div th:replace="fragments/navigation::navbar"></div>
+<section>
+    <label type="text">popis</label>
+    <h3 th:text ="${platba.popis}"></h3>
+    <p>Prevod platby je: </p>
+    <p th:text ="${platba.prevod}"></p>
+</section>
+<section>
+    <a th:href="@{'/platba-reg-form/' + ${platba.id}}">Uprav platbu</a>
+</section>
+</body>
+</html>

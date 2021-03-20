@@ -13,8 +13,8 @@ public class NakoupenaPolozka {
     @Column(nullable = false)
     private Boolean platnost;
 
-    @OneToMany(mappedBy = "id")
-    private Set<Nakup> nakup;
+/*    @OneToMany(mappedBy = "id")
+    private Set<Nakup> nakup;*/
 
     public void setId(Long id) {
         this.id = id;
@@ -41,11 +41,11 @@ public class NakoupenaPolozka {
         this.platnost = platnost;
     }
 
-    public Set<Nakup> getNakup() {
+/*    public Set<Nakup> getNakup() {
         return nakup;
     }
 
     public void setNakup(Set<Nakup> nakup) {
         this.nakup = nakup;
-    }
+    }*/
 }

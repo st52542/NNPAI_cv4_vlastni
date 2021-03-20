@@ -6,6 +6,7 @@ import cz.vlastni.eshop.repository.DopravaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DopravaController {
     @Autowired
     DopravaRepository dopravaRepository;
+
+    @ExceptionHandler(RuntimeException.class)
+    public String ochranaChyb() {
+        return "chyba";
+    }
+    @GetMapping("/doprava-detail/{id}")
+    public String zobrazDetailyDopravy(@PathVariable(required = false) Long id, Model model) {
+        model.addAttribute("doprava", dopravaRepository.findById(id).get());
+        return "doprava-detail";
+    }
     @GetMapping("/doprava")
     public String zobrazVsechnuDopravu(Model model){
         model.addAttribute("dopravaList",dopravaRepository.findAll());

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head"></head>
+<body>
+<h2>Detail dopravy</h2>
+<div th:replace="fragments/navigation::navbar"></div>
+<section>
+    <label type="text">nazev</label>
+    <h3 th:text ="${doprava.popis}"></h3>
+    <p>Cena dopravy je: </p>
+    <p th:text ="${doprava.cena}"></p>
+</section>
+<section>
+    <a th:href="@{'/doprava-reg-form/' + ${doprava.id}}">Uprav dopravu</a>
+</section>
+</body>
+</html>

@@ -6,8 +6,11 @@
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
     <div th:each="pay:${platbaList}">
-        <h3 th:text="${pay.popis}"></h3>
+        <a th:href="@{/platba-detail/{id} (id=${pay.id})}" ><h3 th:text="${pay.popis}"></h3></a>
     </div>
+</section>
+<section>
+    <a th:href="@{'/platba-reg-form'}">Zaloz novou platbu</a>
 </section>
 </body>
 </html>

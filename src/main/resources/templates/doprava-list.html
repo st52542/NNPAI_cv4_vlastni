@@ -6,8 +6,11 @@
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
     <div th:each="deliver:${dopravaList}">
-        <h3 th:text="${deliver.popis}"></h3>
+        <a th:href="@{/doprava-detail/{id} (id=${deliver.id})}" ><h3 th:text="${deliver.popis}"></h3></a>
     </div>
+</section>
+<section>
+    <a th:href="@{'/doprava-reg-form'}">Zaloz novou dopravu</a>
 </section>
 </body>
 </html>

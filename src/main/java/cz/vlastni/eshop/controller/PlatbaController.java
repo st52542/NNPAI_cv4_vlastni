@@ -9,6 +9,7 @@ import cz.vlastni.eshop.repository.PlatbaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,11 +18,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PlatbaController {
     @Autowired
     PlatbaRepository platbaRepository;
+
+    @ExceptionHandler(RuntimeException.class)
+    public String ochranaChyb() {
+        return "chyba";
+    }
+
+    @GetMapping("/platba-detail/{id}")
+    public String zobrazDetailyPlatby(@PathVariable(required = false) Long id, Model model) {
+        model.addAttribute("platba", platbaRepository.findById(id).get());
+        return "platba-detail";
+    }
     @GetMapping("/platba")
-    public String zobrazVsechnyPlatby(Model model){
-        model.addAttribute("platbaList",platbaRepository.findAll());
+    public String zobrazVsechnyPlatby(Model model) {
+        model.addAttribute("platbaList", platbaRepository.findAll());
         return "platba-list";
     }
+
     @GetMapping(value = {"/platba-reg-form", "/platba-reg-form/{id}"})
     public String zobrazPlatbu(@PathVariable(required = false) Long id, Model model) {
         if (id != null) {
@@ -36,6 +49,7 @@ public class PlatbaController {
         }
         return "platba-reg-form";
     }
+
     @PostMapping("/uloz-platbu")
     public String zpracujPlatbu(PridejZmenPlatbaDto pridejZmenPlatbaDto) {
         Platba platba = new Platba();

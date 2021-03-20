@@ -12,7 +12,7 @@ public class Nakup {
     private String poznamka;
     @Column(nullable = false)
     private Date datumVytvoreni;
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false)
     private Integer objednavka;
     @Column(nullable = false)
     private Boolean stav;
@@ -22,8 +22,8 @@ public class Nakup {
     private Doprava doprava;
     @ManyToOne
     private Platba platba;
-    @ManyToOne
-    private NakoupenaPolozka nakoupenaPolozka;
+/*    @ManyToOne
+    private NakoupenaPolozka nakoupenaPolozka;*/
 
     public void setId(Long id) {
         this.id = id;
@@ -90,11 +90,11 @@ public class Nakup {
         this.platba = platba;
     }
 
-    public NakoupenaPolozka getNakoupenaPolozka() {
+/*    public NakoupenaPolozka getNakoupenaPolozka() {
         return nakoupenaPolozka;
     }
 
     public void setNakoupenaPolozka(NakoupenaPolozka nakoupenaPolozka) {
         this.nakoupenaPolozka = nakoupenaPolozka;
-    }
+    }*/
 }

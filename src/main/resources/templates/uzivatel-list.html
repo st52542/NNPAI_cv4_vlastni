@@ -6,9 +6,11 @@
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
     <div th:each="users:${uzivatelList}">
-        <h3 th:text="${users.jmeno}"></h3>
-
+        <a th:href="@{/uzivatel-detail/{id} (id=${users.id})}" ><h3 th:text="${users.jmeno}"></h3></a>
     </div>
+</section>
+<section>
+    <a th:href="@{'/uzivatel-reg-form'}">Zaloz noveho uzivatele</a>
 </section>
 </body>
 </html>
