@@ -10,6 +10,8 @@ public interface UzivatelRepository extends JpaRepository<Uzivatel,Long> {
 
     Optional<Uzivatel> findById(Long id);
 
+    Uzivatel findByJmeno(String jmeno);
+
     Uzivatel findByEmail(String email);
 
     void removeUzivatelById(Long id);

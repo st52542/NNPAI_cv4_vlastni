@@ -2,14 +2,13 @@ package cz.vlastni.eshop.service;
 
 import cz.vlastni.eshop.entity.Doprava;
 import cz.vlastni.eshop.entity.Nakup;
+import cz.vlastni.eshop.entity.Platba;
+import cz.vlastni.eshop.entity.Uzivatel;
 import cz.vlastni.eshop.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Service
 @SessionScope
@@ -29,41 +28,22 @@ public class NakupService implements INakupService {
     }
 
     @Override
-    public void add(Long id) {
-        Doprava doprava = dopravaRepository.findById(id).orElseThrow(NoSuchElementException::new);
-        if (kosik.containsKey(doprava)) {
-            kosik.replace(doprava, kosik.get(doprava) + 1);
-        } else {
-            kosik.put(doprava, 1);
-        }
-    }
-
-    @Override
-    public void remove(Long id) {
-        Doprava doprava = dopravaRepository.findById(id).orElseThrow(NoSuchElementException::new);
-        if (kosik.containsKey(doprava)) {
-            if (kosik.get(doprava) > 1) {
-                kosik.replace(doprava, kosik.get(doprava) - 1);
-            } else {
-                kosik.remove(doprava);
-            }
-        }
-    }
-
-    @Override
     public Map<Doprava, Integer> getKosik() {
         return kosik;
     }
 
     @Override
-    public void checkout() {
+    public void checkout(String platba, String doprava, String uzivatel) {
         Nakup nakup = new Nakup();
         nakup.setDatumVytvoreni(new Date());
         nakup.setObjednavka((int) ((int)(long)((int) ((new Date().getTime()/1000)))*1000L));
         nakup.setStav(true);
-        nakup.setPlatba(platbaRepository.getOne(1L));
-        nakup.setUzivatel(uzivatelRepository.getOne(1L));
-        nakup.setDoprava(dopravaRepository.getOne(1L));
+        Platba platbaFrom = platbaRepository.findByPopis(platba);
+        Uzivatel uzivatelFrom = uzivatelRepository.findByJmeno(uzivatel);
+        Doprava dopravaFrom = dopravaRepository.findByPopis(doprava);
+        nakup.setPlatba(platbaFrom);
+        nakup.setUzivatel(uzivatelFrom);
+        nakup.setDoprava(dopravaFrom);
         nakupRepository.save(nakup);
         kosik.clear();
     }

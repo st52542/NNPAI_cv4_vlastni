@@ -7,10 +7,13 @@
 <section>
     <form method="post" th:action="@{/checkout}">
         <select name="platba">
-            <option th:each="plat:${platby}" th:text="${plat.popis}" th:object=""></option>
+            <option th:each="plat:${platby}" th:text="${plat.popis}"></option>
         </select>
         <select name="doprava">
             <option th:each="dop:${dopravy}" th:text="${dop.popis}"></option>
+        </select>
+        <select name="uzivatel">
+            <option th:each="uziv:${uzivately}" th:text="${uziv.jmeno}"></option>
         </select>
         <input th:type="submit">
     </form>

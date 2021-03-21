@@ -10,6 +10,8 @@ public interface PlatbaRepository extends JpaRepository<Platba,Long> {
 
     Optional<Platba> findById(Long id);
 
+    Platba findByPopis(String popis);
+
     Platba findByPrevod(Double prevod);
 
     void removePlatbaById(Long id);

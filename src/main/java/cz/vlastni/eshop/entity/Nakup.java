@@ -8,8 +8,6 @@ public class Nakup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 100)
-    private String poznamka;
     @Column(nullable = false)
     private Date datumVytvoreni;
     @Column(nullable = false)
@@ -32,14 +30,6 @@ public class Nakup {
 
     public Long getId() {
         return id;
-    }
-
-    public String getPoznamka() {
-        return poznamka;
-    }
-
-    public void setPoznamka(String poznamka) {
-        this.poznamka = poznamka;
     }
 
     public Date getDatumVytvoreni() {
@@ -90,11 +80,4 @@ public class Nakup {
         this.platba = platba;
     }
 
-/*    public NakoupenaPolozka getNakoupenaPolozka() {
-        return nakoupenaPolozka;
-    }
-
-    public void setNakoupenaPolozka(NakoupenaPolozka nakoupenaPolozka) {
-        this.nakoupenaPolozka = nakoupenaPolozka;
-    }*/
 }

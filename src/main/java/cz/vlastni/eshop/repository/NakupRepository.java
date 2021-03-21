@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface NakupRepository extends JpaRepository<Nakup,Long> {
-    @EntityGraph(attributePaths = {"Doprava","NakoupenaPolozka","Platba","Uzivatel"})
+
     Optional<Nakup> findById(Long id);
+
+    Nakup getNakupById(Long id);
 
     Nakup findByObjednavka(Integer objednavka);
 

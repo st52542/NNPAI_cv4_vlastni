@@ -5,12 +5,7 @@ import cz.vlastni.eshop.entity.Doprava;
 import java.util.Map;
 
 public interface INakupService {
-    void add(Long id);
+    Map<Doprava, Integer> getKosik();
 
-
-    void remove(Long id);
-
-    Map<Doprava,Integer> getKosik();
-
-    void checkout();
+    void checkout(String platba, String doprava, String uzivatel);
 }

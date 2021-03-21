@@ -28,7 +28,7 @@ public class UzivatelController {
         return "uzivatel-detail";
     }
 
-    @GetMapping("/uzivatel-list")
+    @GetMapping("/uzivatel")
     public String zobrazVsechnyUzivatele(Model model) {
         model.addAttribute("uzivatelList", uzivatelRepository.findAll());
         return "uzivatel-list";
