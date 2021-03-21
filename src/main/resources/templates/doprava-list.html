@@ -5,12 +5,12 @@
 <h2>Seznam doprav</h2>
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
-    <div th:each="deliver:${dopravaList}">
-        <a th:href="@{/doprava-detail/{id} (id=${deliver.id})}" ><h3 th:text="${deliver.popis}"></h3></a>
+    <div class="item-list" th:each="deliver:${dopravaList}">
+        <a class="item" th:href="@{/doprava-detail/{id} (id=${deliver.id})}" ><h4 th:text="${deliver.popis}"></h4></a>
     </div>
 </section>
 <section>
-    <a th:href="@{'/doprava-reg-form'}">Zaloz novou dopravu</a>
+    <a class="action-but" th:href="@{'/doprava-reg-form'}">Zaloz novou dopravu</a>
 </section>
 </body>
 </html>

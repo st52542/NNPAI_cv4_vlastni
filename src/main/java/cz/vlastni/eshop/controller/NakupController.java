@@ -6,6 +6,7 @@ import cz.vlastni.eshop.repository.NakupRepository;
 import cz.vlastni.eshop.repository.PlatbaRepository;
 import cz.vlastni.eshop.repository.UzivatelRepository;
 import cz.vlastni.eshop.service.INakupService;
+import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,12 +35,15 @@ public class NakupController {
         model.addAttribute("nakupList", nakupRepository.findAll());
         return "nakup-list";
     }
-    @ExceptionHandler(RuntimeException.class)
+
+    @ExceptionHandler({RuntimeException.class, NotFound.class})
     public String ochranaChyb() {
         return "chyba";
     }
+
+
     @GetMapping("/nakup-detail/{id}")
-    public String zobrazDetailyPlatby(@PathVariable(required = false) Long id, Model model) {
+    public String zobrazDetailyPlatby(@PathVariable Long id, Model model) {
         Nakup nakup =nakupRepository.findById(id).get();
         model.addAttribute("nakup", nakup);
         model.addAttribute("uzivatel",uzivatelRepository.findById(nakup.getUzivatel().getId()).get());
@@ -52,7 +56,7 @@ public class NakupController {
     public String checkoutPost(@RequestParam String platba,@RequestParam String doprava,@RequestParam String uzivatel,Model model){
         iNakupService.checkout(platba,doprava,uzivatel);
         model.addAttribute("nakupList", nakupRepository.findAll());
-        return "nakup-list";
+        return "redirect:/";
     }
 
     @GetMapping("/checkout")

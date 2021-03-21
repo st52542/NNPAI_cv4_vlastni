@@ -5,13 +5,13 @@
 <h2>Detail platby</h2>
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
-    <label type="text">popis</label>
-    <h3 th:text ="${platba.popis}"></h3>
-    <p>Prevod platby je: </p>
+    <h3 type="text">popis</h3>
+    <p th:text ="${platba.popis}"></p>
+    <h3>Prevod platby je: </h3>
     <p th:text ="${platba.prevod}"></p>
 </section>
 <section>
-    <a th:href="@{'/platba-reg-form/' + ${platba.id}}">Uprav platbu</a>
+    <a class="action-but" th:href="@{'/platba-reg-form/' + ${platba.id}}">Uprav platbu</a>
 </section>
 </body>
 </html>

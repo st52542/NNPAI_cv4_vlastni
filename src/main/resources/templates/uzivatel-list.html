@@ -5,12 +5,12 @@
 <h2>Seznam uzivatelu</h2>
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
-    <div th:each="users:${uzivatelList}">
-        <a th:href="@{/uzivatel-detail/{id} (id=${users.id})}" ><h3 th:text="${users.jmeno}"></h3></a>
+    <div class="item-list" th:each="users:${uzivatelList}">
+        <a class="item" th:href="@{/uzivatel-detail/{id} (id=${users.id})}" ><h4 th:text="${users.jmeno}"></h4></a>
     </div>
 </section>
 <section>
-    <a th:href="@{'/uzivatel-reg-form'}">Zaloz noveho uzivatele</a>
+    <a class="action-but" th:href="@{'/uzivatel-reg-form'}">Zaloz noveho uzivatele</a>
 </section>
 </body>
 </html>

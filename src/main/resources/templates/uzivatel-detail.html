@@ -5,21 +5,21 @@
 <h2>Detail uzivatele</h2>
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
-    <label type="text">jmeno</label>
-    <h3 th:text ="${uzivatel.jmeno}"></h3>
-    <label type="text">prijmeni</label>
-    <h3 th:text ="${uzivatel.prijmeni}"></h3>
-    <label type="text">heslo</label>
-    <h3 th:text ="${uzivatel.heslo}"></h3>
-    <label type="text">email</label>
-    <h3 th:text ="${uzivatel.email}"></h3>
-    <label type="text">adresa</label>
-    <h3 th:text ="${uzivatel.adresa}"></h3>
-    <label type="text">admin</label>
-    <h3 th:text ="${uzivatel.admin}"></h3>
+    <h3 type="text">jmeno</h3>
+    <p th:text ="${uzivatel.jmeno}"></p>
+    <h3 type="text">prijmeni</h3>
+    <p th:text ="${uzivatel.prijmeni}"></p>
+    <h3 type="text">heslo</h3>
+    <p th:text ="${uzivatel.heslo}"></p>
+    <h3 type="text">email</h3>
+    <p th:text ="${uzivatel.email}"></p>
+    <h3 type="text">adresa</h3>
+    <p th:text ="${uzivatel.adresa}"></p>
+    <h3 type="text">admin</h3>
+    <p th:text ="${uzivatel.admin}"></p>
 </section>
 <section>
-    <a th:href="@{'/uzivatel-reg-form/' + ${uzivatel.id}}">Uprav uzivatele</a>
+    <a class="action-but" th:href="@{'/uzivatel-reg-form/' + ${uzivatel.id}}">Uprav uzivatele</a>
 </section>
 </body>
 </html>

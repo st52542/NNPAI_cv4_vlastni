@@ -5,16 +5,16 @@
 <h2>Detail nakupu</h2>
 <div th:replace="fragments/navigation::navbar"></div>
 <section>
-    <label type="text">datum</label>
-    <h3 th:text="${nakup.datumVytvoreni}"></h3>
-    <label type="text">stav</label>
-    <h3 th:text="${nakup.stav}"></h3>
-    <label type="text">doprava</label>
-    <h3 th:text="${doprava.popis}"></h3>
-    <label type="text">platba</label>
-    <h3 th:text="${platba.popis}"></h3>
-    <label type="text">uzivatel</label>
-    <h3 th:text="${uzivatel.jmeno}"></h3>
+    <h3 type="text">datum</h3>
+    <p th:text="${nakup.datumVytvoreni}"></p>
+    <h3 type="text">stav</h3>
+    <p th:text="${nakup.stav}"></p>
+    <h3 type="text">doprava</h3>
+    <p th:text="${doprava.popis}"></p>
+    <h3 type="text">platba</h3>
+    <p th:text="${platba.popis}"></p>
+    <h3 type="text">uzivatel</h3>
+    <p th:text="${uzivatel.jmeno}"></p>
 </section>
 </body>
 </html>
